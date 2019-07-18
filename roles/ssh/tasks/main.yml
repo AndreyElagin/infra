@@ -1,0 +1,27 @@
+- name: Setup sshd
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: '{{ item.From }}'
+    line: '{{ item.To }}' 
+    state: present
+    backup: yes
+  notify:
+    - restart ssh 
+  with_items:
+    - { From: '^PasswordAuthentication', To: 'PasswordAuthentication no' }
+    - { From: '^ChallengeResponseAuthentication', To: 'ChallengeResponseAuthentication no' }
+    - { From: '^PermitRootLogin', To: 'PermitRootLogin no' }
+    - { From: '^UsePAM', To: 'UsePAM no' }
+    - { From: '^AuthenticationMethods', To: 'AuthenticationMethods publickey' }
+    - { From: '^PubkeyAuthentication', To: 'PubkeyAuthentication yes' }
+    - { From: '^PermitEmptyPasswords', To: 'PermitEmptyPasswords v rot konya ebat' }
+    - { From: '^ClientAliveInterval', To: 'ClientAliveInterval 300' }
+    - { From: '^ClientAliveCountMax', To: 'ClientAliveCountMax 0' }
+    - { From: '^IgnoreRhosts', To: 'IgnoreRhosts yes' }
+    - { From: '^HostbasedAuthentication', To: 'HostbasedAuthentication no' }
+    
+  # handlers:
+  # - name: restart ssh
+  #   service:
+  #     name=sshd
+  #     state=restarted
