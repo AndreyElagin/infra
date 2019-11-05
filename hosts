@@ -1,1 +1,12 @@
-cluster-huyaster
+[all:vars]
+ansible_user=daddyingrave
+ansible_become=yes
+ansible_become_method=sudo
+
+[kubernetes-master-nodes]
+kub-master ansible_host=192.168.42.243
+
+[kubernetes-worker-nodes]
+kub-worker1 ansible_host=192.168.42.247
+kub-worker2 ansible_host=192.168.42.248
+kub-worker3 ansible_host=192.168.42.249
