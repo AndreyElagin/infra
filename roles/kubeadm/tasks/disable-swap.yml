@@ -1,6 +1,7 @@
 ---
-  - name: Disabling Swap
+  - name: Disable Swap
     shell: swapoff -a
+  - name: Cleanup fstab
     replace:
       path: /etc/fstab
       regexp: "(.*swap*)"
