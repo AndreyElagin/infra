@@ -1,0 +1,7 @@
+- name: read keys from github profile
+  connection: local
+  get_url:
+    url: https://api.github.com/users/AndreyElagin/keys
+    dest: ./keys.json
+    force: yes
+  

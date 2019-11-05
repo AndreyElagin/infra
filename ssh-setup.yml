@@ -1,6 +1,0 @@
----
- - hosts: cluster-huyaster
-   become: true
-   gather_facts: no
-   roles:
-    - ssh
