@@ -1,5 +1,4 @@
 ---
   - import_tasks: disable-swap.yml
-  - import_tasks: kube-repo.yml
+  - import_tasks: repos.yml
   - import_tasks: packages.yml
-
