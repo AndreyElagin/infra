@@ -1,11 +1,18 @@
 ---
+  - name: Add docker repo
+    yum_repository:
+      name: docker-ce
+      baseurl: https://download.docker.com/linux/centos/docker-ce.repo
+
   - name: Install kubernetes related packages
     yum:
       name: "{{ packages }}"
       state: present
     vars:
       packages:
-      - docker
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
       - kubeadm
       - kubelet
       - kubectl
