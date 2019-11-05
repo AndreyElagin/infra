@@ -2,6 +2,7 @@
   - name: Add docker repo
     yum_repository:
       name: docker-ce
+      description: this is a docker!
       baseurl: https://download.docker.com/linux/centos/docker-ce.repo
 
   - name: Install kubernetes related packages
