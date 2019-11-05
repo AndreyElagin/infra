@@ -1,0 +1,7 @@
+---
+  - name: Disabling Swap
+    shell: swapoff -a
+    replace:
+      path: /etc/fstab
+      regexp: "(.*swap*)"
+      replace: '#\1'

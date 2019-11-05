@@ -1,0 +1,7 @@
+---
+  - include_tasks: "{{ tasks }}"
+    vars:
+      tasks:
+      - disable-swap.yml
+      - kube-repo.yml
+      - packages.yml

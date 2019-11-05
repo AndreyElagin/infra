@@ -1,0 +1,11 @@
+---
+  - name: Install kubernetes related packages
+    yum:
+      name: "{{ packages }}"
+      state: present
+    vars:
+      packages:
+      - docker
+      - kubeadm
+      - kubelet
+      - kubectl

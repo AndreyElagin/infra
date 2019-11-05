@@ -1,0 +1,4 @@
+---
+  - hosts: kubernetes-master-nodes
+    roles:
+      - kubeadm
