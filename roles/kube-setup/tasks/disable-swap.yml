@@ -1,0 +1,11 @@
+---
+- name: Cleanup fstab
+  replace:
+    path: /etc/fstab
+    regexp: "(^[^#].*swap*)"
+    replace: '#\1'
+  register: swaps_enabled
+
+- name: Disable swap
+  shell: swapoff -a
+  when: swaps_enabled.changed == True

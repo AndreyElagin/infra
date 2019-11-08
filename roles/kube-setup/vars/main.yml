@@ -1,0 +1,11 @@
+---
+open_ports:
+  - "6443/tcp"
+  - "10250/tcp"
+packages:
+  - kubeadm
+  - kubelet
+  - kubectl
+services:
+  - kubelet
+  - firewalld

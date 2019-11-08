@@ -1,0 +1,6 @@
+---
+- import_tasks: master-start.yml
+  when: "{{ node_type }} == 'master'"
+
+- import_tasks: workers-join.yml
+  when: "{{ node_type }} == 'worker'"

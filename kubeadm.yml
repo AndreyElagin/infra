@@ -2,4 +2,7 @@
   - hosts: all
     roles:
       - geerlingguy.docker
-      - kubeadm
+      - kube-setup
+    vars:
+      api_server_advertise_address: 192.168.42.244
+      pod_network_cidr: 172.16.0.0/16
