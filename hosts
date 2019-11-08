@@ -10,3 +10,6 @@ kub-master ansible_host=192.168.42.243
 kub-worker1 ansible_host=192.168.42.247
 kub-worker2 ansible_host=192.168.42.248
 kub-worker3 ansible_host=192.168.42.249
+
+[kubernetes-worker-nodes-new]
+kub-worker4 ansible_host=192.168.42.250

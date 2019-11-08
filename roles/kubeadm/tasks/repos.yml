@@ -12,14 +12,3 @@
         repo_gpgcheck=1
         gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
         
-  - name: Add yum repo for docker
-    blockinfile:
-      create: yes
-      path: /etc/yum.repos.d/docker-ce.repo
-      block: |
-        [docker-ce-stable]
-        name=Docker CE Stable - $basearch
-        baseurl=https://download.docker.com/linux/centos/7/$basearch/stable
-        enabled=1
-        gpgcheck=1
-        gpgkey=https://download.docker.com/linux/centos/gpg
