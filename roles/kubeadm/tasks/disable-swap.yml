@@ -1,6 +1,7 @@
 ---
   - name: Disable Swap
     shell: swapoff -a
+    when: cat /proc/swaps | grep -c file > 0
 
   - name: Cleanup fstab
     replace:
