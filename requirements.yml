@@ -1,4 +1,3 @@
 ---
-
 - name: geerlingguy.docker
   source: https://github.com/geerlingguy/ansible-role-docker
